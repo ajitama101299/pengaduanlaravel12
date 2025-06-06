@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Aduan;
 
 class User extends Authenticatable
 {
@@ -49,6 +50,11 @@ class User extends Authenticatable
     public function pengaduans()
 {
     return $this->hasMany(Pengaduan::class);
+}
+
+public function pengaduan()
+{
+    return $this->hasMany(Aduan::class);
 }
 
 }
